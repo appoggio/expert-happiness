@@ -24,9 +24,7 @@ def image_input(style_model_name):
         st.stop()
 
     WIDTH = st.select_slider('Seleziona la Qualità', list(range(150, 501, 50)), value=200)
-    content = imutils.resize(content, width=WIDTH)
     generated = style_transfer(content, model)
-    st.image(content, width=300, channels='BGR')
     st.image(generated, channels='BGR', clamp=True)
 
 
