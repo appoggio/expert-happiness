@@ -13,10 +13,10 @@ def image_input(style_model_name):
 
     model = get_model_from_path(style_model_path)
 
-    if st.sidebar.checkbox('Upload'):
-        content_file = st.sidebar.file_uploader("Choose a Content Image", type=["png", "jpg", "jpeg"])
+    if st.checkbox('Carica la foto'):
+        content_file = st.file_uploader("Scegli un immagine dal tuo dispositivo ", type=["png", "jpg", "jpeg"])
     else:
-        content_name = st.sidebar.selectbox("Choose the content images:", content_images_name)
+        content_name = st.selectbox("Scegli un immagine", content_images_name)
         content_file = content_images_dict[content_name]
 
     if content_file is not None:
@@ -27,16 +27,16 @@ def image_input(style_model_name):
         st.warning("Upload an Image OR Untick the Upload Button)")
         st.stop()
 
-    WIDTH = st.sidebar.select_slider('QUALITY (May reduce the speed)', list(range(150, 501, 50)), value=200)
+    WIDTH = st.select_slider('Seleziona la Qualità', list(range(150, 501, 50)), value=200)
     content = imutils.resize(content, width=WIDTH)
     generated = style_transfer(content, model)
-    st.sidebar.image(content, width=300, channels='BGR')
+    st.image(content, width=300, channels='BGR')
     st.image(generated, channels='BGR', clamp=True)
 
 
 def webcam_input(style_model_name):
     st.header("Webcam Live Feed")
-    WIDTH = st.sidebar.select_slider('QUALITY (May reduce the speed)', list(range(150, 501, 50)))
+    WIDTH = st.select_slider('QUALITY (May reduce the speed)', list(range(150, 501, 50)))
 
     class NeuralStyleTransferTransformer(VideoTransformerBase):
         _width = WIDTH
