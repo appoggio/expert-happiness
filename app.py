@@ -10,7 +10,7 @@ html_string = "<h3><br></h3>"
 
 st.markdown(html_string, unsafe_allow_html=True)
 
-with st.expander("Opzioni"):
+with st.beta_expander("Opzioni"):
 	method = st.radio("Da dove vuoi prendere l'immagine da modificare ? ", options=['Webcam Live', 'Voglio caricare una foto'])
 
 	style_model_name = st.selectbox("Scegli il modello che vuoi applicare", style_models_name)
