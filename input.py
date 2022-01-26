@@ -13,9 +13,7 @@ def image_input(style_model_name):
 
     model = get_model_from_path(style_model_path)
 
-    
     content_file = st.file_uploader("Scegli un immagine dal tuo dispositivo ", type=["png", "jpg", "jpeg"])
-
 
     if content_file is not None:
         content = Image.open(content_file)
