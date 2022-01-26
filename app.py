@@ -4,7 +4,7 @@ from data import *
 from input import image_input, webcam_input
 
 st.title("Neural Style Transfer by INTELLIGENZAARTIFICIALEITALIA.NET")
-st.write("\n \n \n")
+st.write("\n\n\n")
 method = st.radio("Da dove vuoi prendere l'immagine da modificare ? ", options=['Webcam Live', 'Voglio caricare una foto'])
 
 
