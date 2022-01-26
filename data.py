@@ -2,9 +2,9 @@ import os
 
 # Style Models Data
 
-style_models_file = ['candy.t7', 'feathers.t7', 'la_muse.t7', 'mosaic.t7', 'the_scream.t7', 'udnie.t7']
+style_models_file = ['candy.t7', 'feathers.t7', 'la_muse.t7', 'mosaic.t7', 'the_scream.t7', 'udnie.t7', 'the_wave.t7' , 'starry_night.t7' ]
 
-style_models_name = ['Candy', 'Feathers', 'La_muse', 'Mosaic', 'The_scream', 'Udnie']
+style_models_name = ['Candy', 'Feathers', 'La_muse', 'Mosaic', 'The_scream', 'Udnie' , 'the_wave' , 'starry_night']
 
 model_path = 'models'
 
