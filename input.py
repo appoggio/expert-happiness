@@ -25,7 +25,8 @@ def image_input(style_model_name):
 
     WIDTH = st.select_slider('Seleziona la Qualità', list(range(150, 501, 50)), value=200)
     generated = style_transfer(content, model)
-    st.image(generated, channels='BGR', clamp=True)
+    if(st.button("Genera immagine")):
+        st.image(generated, channels='BGR', clamp=True)
 
 
 def webcam_input(style_model_name):
