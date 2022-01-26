@@ -18,6 +18,7 @@ html_string = "<h3><br></h3>"
 st.markdown(html_string, unsafe_allow_html=True)
 
 if method == 'Voglio caricare una foto':
-    image_input(style_model_name)
+    generated = image_input(style_model_name)
+    st.image(generated)
 else:
     webcam_input(style_model_name)
