@@ -13,18 +13,16 @@ def image_input(style_model_name):
 
     model = get_model_from_path(style_model_path)
 
-    if st.checkbox('Carica la foto'):
-        content_file = st.file_uploader("Scegli un immagine dal tuo dispositivo ", type=["png", "jpg", "jpeg"])
-    else:
-        content_name = st.selectbox("Scegli un immagine", content_images_name)
-        content_file = content_images_dict[content_name]
+    
+    content_file = st.file_uploader("Scegli un immagine dal tuo dispositivo ", type=["png", "jpg", "jpeg"])
+
 
     if content_file is not None:
         content = Image.open(content_file)
         content = np.array(content) #pil to cv
         content = cv2.cvtColor(content, cv2.COLOR_RGB2BGR)
     else:
-        st.warning("Upload an Image OR Untick the Upload Button)")
+        st.warning("Carica una foto")
         st.stop()
 
     WIDTH = st.select_slider('Seleziona la Qualità', list(range(150, 501, 50)), value=200)
