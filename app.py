@@ -4,8 +4,8 @@ from data import *
 from input import image_input, webcam_input
 
 st.title("Neural Style Transfer by INTELLIGENZAARTIFICIALEITALIA.NET")
-st.text("\n\n")
-method = st.sidebar.radio("Da dove vuoi prendere l'immagine da modificare ? ", options=['Webcam Live', 'Voglio caricare una foto'])
+st.write("\n \n \n")
+method = st.radio("Da dove vuoi prendere l'immagine da modificare ? ", options=['Webcam Live', 'Voglio caricare una foto'])
 
 
 style_model_name = st.selectbox("Scegli il modello che vuoi applicare", style_models_name)
