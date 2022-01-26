@@ -36,7 +36,7 @@ def image_input(style_model_name):
 
 def webcam_input(style_model_name):
     st.header("Webcam Live Feed")
-    WIDTH = st.select_slider('QUALITY (May reduce the speed)', list(range(150, 501, 50)))
+    WIDTH = st.select_slider('Qualità ', list(range(150, 501, 50)))
 
     class NeuralStyleTransferTransformer(VideoTransformerBase):
         _width = WIDTH
