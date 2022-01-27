@@ -23,14 +23,15 @@ def image_input(style_model_name):
         st.warning("Carica una foto")
         st.stop()
 
-    WIDTH = st.select_slider('Seleziona la Qualità', list(range(150, 501, 50)), value=200)
+
+    WIDTH = st.select_slider('Seleziona la Qualità', list(range(150,  1000 , 50)), value=200)
     generated = style_transfer(content, model)
     return generated
 
 
 def webcam_input(style_model_name):
     st.header("Webcam Live Feed")
-    WIDTH = st.select_slider('Qualità ', list(range(150, 501, 50)))
+    WIDTH = st.select_slider('Qualità ', list(range(150, 1000, 50)))
 
     class NeuralStyleTransferTransformer(VideoTransformerBase):
         _width = WIDTH
